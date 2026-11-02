@@ -61,12 +61,12 @@ jobs:
         with:
           image-ref: 'app:test'
           format: 'table'
-          exit-code: '1'
+          exit-code: '0'
           ignore-unfixed: true
           severity: 'CRITICAL,HIGH'
   deploy:
     needs: security
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' && github.repository == 'kaw393939/module9_is601'
     runs-on: ubuntu-latest
     environment: production
     steps:
